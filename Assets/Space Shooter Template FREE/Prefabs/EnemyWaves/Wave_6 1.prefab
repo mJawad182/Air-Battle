@@ -153,7 +153,7 @@ MonoBehaviour:
   pathColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   shooting:
     shotChance: 100
-    shotTimeMin: 0.5
-    shotTimeMax: 3.6
+    shotTimeMin: 0.6418717
+    shotTimeMax: 4
   testMode: 0
   stopAtEnd: 0

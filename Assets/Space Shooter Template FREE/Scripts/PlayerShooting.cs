@@ -75,7 +75,7 @@ public class PlayerShooting : MonoBehaviour {
         levelTimer += Time.deltaTime;
 
         // Stop shooting after 120 seconds of THIS level
-        if (levelTimer >= 147f)
+        if (levelTimer >= 195f)
             return;
 
         // Don't shoot if player is not visible (respawning/blinking)

@@ -55,7 +55,7 @@ public class GameManager : MonoBehaviour
 
     IEnumerator CheckGameTime()
     {
-        while (levelTimer < 147f)
+        while (levelTimer < 195f)
         {
             levelTimer += Time.deltaTime;
             yield return null;

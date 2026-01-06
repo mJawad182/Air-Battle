@@ -1,5 +1,17 @@
 using UnityEngine;
 
+public enum SpawnCount
+{
+    One = 1,
+    Two = 2
+}
+
+public enum MoveScriptType
+{
+    LowFinalEnemyMove,
+    LowEnemySpawnerMove2
+}
+
 public class LowFinalEnemySpawner : MonoBehaviour
 {
     [Header("Final Enemy Settings")]
@@ -8,9 +20,16 @@ public class LowFinalEnemySpawner : MonoBehaviour
     public float stopYPosition = 2f;
     public float moveSpeed = 2f;
     public float spawnTime = 80f;
+    public float stayDuration = 35f;
     
-    [Header("Parallel Spawn Settings")]
-    [Tooltip("Distance from center for left/right enemies")]
+    [Header("Spawn Settings")]
+    [Tooltip("Choose to spawn 1 or 2 enemies")]
+    public SpawnCount enemiesToSpawn = SpawnCount.Two;
+    
+    [Tooltip("Which move script to use")]
+    public MoveScriptType moveScript = MoveScriptType.LowFinalEnemyMove;
+    
+    [Tooltip("Distance from center for left/right enemies (only used when spawning 2)")]
     public float horizontalOffset = 2f;
 
     
@@ -33,30 +52,50 @@ public class LowFinalEnemySpawner : MonoBehaviour
 
         if (levelTimer >= spawnTime && !hasSpawned)
         {
-            SpawnParallelEnemies();
+            SpawnEnemies();
             hasSpawned = true;
         }
     }
 
-    void SpawnParallelEnemies()
+    void SpawnEnemies()
     {
         float spawnY = mainCam.orthographicSize + spawnYOffScreen;
         
-        // Spawn left enemy
-        Vector3 leftSpawnPos = new Vector3(-horizontalOffset, spawnY, 0f);
-        SpawnEnemy(leftSpawnPos);
-        
-        // Spawn right enemy
-        Vector3 rightSpawnPos = new Vector3(horizontalOffset, spawnY, 0f);
-        SpawnEnemy(rightSpawnPos);
+        if (enemiesToSpawn == SpawnCount.One)
+        {
+            // Spawn single enemy at center
+            Vector3 centerSpawnPos = new Vector3(0f, spawnY, 0f);
+            SpawnEnemy(centerSpawnPos);
+        }
+        else
+        {
+            // Spawn left enemy
+            Vector3 leftSpawnPos = new Vector3(-horizontalOffset, spawnY, 0f);
+            SpawnEnemy(leftSpawnPos);
+            
+            // Spawn right enemy
+            Vector3 rightSpawnPos = new Vector3(horizontalOffset, spawnY, 0f);
+            SpawnEnemy(rightSpawnPos);
+        }
     }
     
     void SpawnEnemy(Vector3 spawnPos)
     {
         GameObject enemy = Instantiate(EnemyPrefab, spawnPos, Quaternion.identity);
 
-        LowFinalEnemyMove move = enemy.AddComponent<LowFinalEnemyMove>();
-        move.targetY = stopYPosition;
-        move.speed = moveSpeed;
+        if (moveScript == MoveScriptType.LowFinalEnemyMove)
+        {
+            LowFinalEnemyMove move = enemy.AddComponent<LowFinalEnemyMove>();
+            move.targetY = stopYPosition;
+            move.speed = moveSpeed;
+            move.stayDuration = stayDuration;
+        }
+        else
+        {
+            LowEnemySpawnerMove2 move = enemy.AddComponent<LowEnemySpawnerMove2>();
+            move.targetY = stopYPosition;
+            move.speed = moveSpeed;
+            move.stayDuration = stayDuration;
+        }
     }
 }

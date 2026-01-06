@@ -32,11 +32,23 @@ public class LevelSelectManager : MonoBehaviour
             {
                 levelButtons[i].interactable = true;
                 buttonImages[i].sprite = levelActiveSprites[i];
+                
+                // Set child active when unlocked
+                if (levelButtons[i].transform.childCount > 0)
+                {
+                    levelButtons[i].transform.GetChild(0).gameObject.SetActive(true);
+                }
             }
             else
             {
                 levelButtons[i].interactable = false;
                 buttonImages[i].sprite = lockedSprite;
+                
+                // Set child inactive when locked
+                if (levelButtons[i].transform.childCount > 0)
+                {
+                    levelButtons[i].transform.GetChild(0).gameObject.SetActive(false);
+                }
             }
         }
     }
