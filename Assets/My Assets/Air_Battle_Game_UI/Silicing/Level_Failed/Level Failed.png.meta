@@ -422,7 +422,19 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Level Failed_0: 7015891176952551503
+      Level Failed_1: -8972123903877433413
+      Level Failed_10: 1304948548378711952
+      Level Failed_11: 8927461865988155953
+      Level Failed_2: 3961391707479835311
+      Level Failed_3: -8280002743129811139
+      Level Failed_4: 7260631970318048362
+      Level Failed_5: 3053199559917729036
+      Level Failed_6: 4197735760080691326
+      Level Failed_7: -6486698383237762401
+      Level Failed_8: -3161671351423547389
+      Level Failed_9: 7540011362951524186
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

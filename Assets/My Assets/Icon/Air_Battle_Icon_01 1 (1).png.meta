@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Air_Battle_Icon_01 1 (1)_0: -8910277628421509307
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

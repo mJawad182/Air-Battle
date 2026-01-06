@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Home_Button_With_Text_0: -2886718468806360474
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
