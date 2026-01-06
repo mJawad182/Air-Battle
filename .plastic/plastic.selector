@@ -1,0 +1,4 @@
+repository "1942 Shooter 2D/1942 Shooter 2D@18968359283853@cloud"
+  path "/"
+    br "/main"
+    co "/main"

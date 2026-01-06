@@ -1,0 +1,650 @@
+fileFormatVersion: 2
+guid: 7e5d74be81475894faf8856aedb7cfa0
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 8122622818495260705
+    second: Effect 02_00040_0
+  - first:
+      213: 6054599434875856904
+    second: Effect 02_00040_1
+  - first:
+      213: 3476857862777689036
+    second: Effect 02_00040_2
+  - first:
+      213: 2986450312189768411
+    second: Effect 02_00040_3
+  - first:
+      213: 833500912369335874
+    second: Effect 02_00040_4
+  - first:
+      213: -5575354803231239799
+    second: Effect 02_00040_5
+  - first:
+      213: -1775012044192476493
+    second: Effect 02_00040_6
+  - first:
+      213: 5229257562635795310
+    second: Effect 02_00040_7
+  - first:
+      213: -8683824581584756283
+    second: Effect 02_00040_8
+  - first:
+      213: -5462325840917744934
+    second: Effect 02_00040_9
+  - first:
+      213: -8105676144664867545
+    second: Effect 02_00040_10
+  - first:
+      213: -8276336497704984765
+    second: Effect 02_00040_11
+  - first:
+      213: 1384999109936518152
+    second: Effect 02_00040_12
+  - first:
+      213: -8698696059554777939
+    second: Effect 02_00040_13
+  - first:
+      213: 2273179700304210241
+    second: Effect 02_00040_14
+  - first:
+      213: -8133577466068301098
+    second: Effect 02_00040_15
+  - first:
+      213: 4274599417299104613
+    second: Effect 02_00040_16
+  - first:
+      213: -1522688074921490700
+    second: Effect 02_00040_17
+  - first:
+      213: 6347825554970760755
+    second: Effect 02_00040_18
+  - first:
+      213: -1281793982089067088
+    second: Effect 02_00040_19
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Effect 02_00040_0
+      rect:
+        serializedVersion: 2
+        x: 46
+        y: 181
+        width: 26
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 12864ecfa6a59b070800000000000000
+      internalID: 8122622818495260705
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Effect 02_00040_1
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 136
+        width: 35
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8086e0d7b12460450800000000000000
+      internalID: 6054599434875856904
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Effect 02_00040_2
+      rect:
+        serializedVersion: 2
+        x: 91
+        y: 164
+        width: 12
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cc353651ec7404030800000000000000
+      internalID: 3476857862777689036
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Effect 02_00040_3
+      rect:
+        serializedVersion: 2
+        x: 123
+        y: 166
+        width: 16
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bd2fc6d6cb0027920800000000000000
+      internalID: 2986450312189768411
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Effect 02_00040_4
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 152
+        width: 26
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 24efcb9e9a0319b00800000000000000
+      internalID: 833500912369335874
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Effect 02_00040_5
+      rect:
+        serializedVersion: 2
+        x: 94
+        y: 147
+        width: 7
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 98152a0985c50a2b0800000000000000
+      internalID: -5575354803231239799
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Effect 02_00040_6
+      rect:
+        serializedVersion: 2
+        x: 113
+        y: 131
+        width: 17
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3b21ed143f3ed57e0800000000000000
+      internalID: -1775012044192476493
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Effect 02_00040_7
+      rect:
+        serializedVersion: 2
+        x: 139
+        y: 145
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e6b7ee32c0e029840800000000000000
+      internalID: 5229257562635795310
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Effect 02_00040_8
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 99
+        width: 33
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5c1e5da4d8bdc7780800000000000000
+      internalID: -8683824581584756283
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Effect 02_00040_9
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 130
+        width: 8
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ad239ac969be134b0800000000000000
+      internalID: -5462325840917744934
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Effect 02_00040_10
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 94
+        width: 31
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 72d84ecfd7ad28f80800000000000000
+      internalID: -8105676144664867545
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Effect 02_00040_11
+      rect:
+        serializedVersion: 2
+        x: 37
+        y: 107
+        width: 14
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 34f91b42ecb842d80800000000000000
+      internalID: -8276336497704984765
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Effect 02_00040_12
+      rect:
+        serializedVersion: 2
+        x: 54
+        y: 97
+        width: 13
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8049ff93a51883310800000000000000
+      internalID: 1384999109936518152
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Effect 02_00040_13
+      rect:
+        serializedVersion: 2
+        x: 121
+        y: 52
+        width: 57
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: da4b5218506084780800000000000000
+      internalID: -8698696059554777939
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Effect 02_00040_14
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 67
+        width: 24
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 149e243c4e4fb8f10800000000000000
+      internalID: 2273179700304210241
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Effect 02_00040_15
+      rect:
+        serializedVersion: 2
+        x: 61
+        y: 82
+        width: 10
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6da80ed536abf1f80800000000000000
+      internalID: -8133577466068301098
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Effect 02_00040_16
+      rect:
+        serializedVersion: 2
+        x: 93
+        y: 72
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5637431b58d625b30800000000000000
+      internalID: 4274599417299104613
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Effect 02_00040_17
+      rect:
+        serializedVersion: 2
+        x: 164
+        y: 50
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4f6c49e63435edae0800000000000000
+      internalID: -1522688074921490700
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Effect 02_00040_18
+      rect:
+        serializedVersion: 2
+        x: 37
+        y: 53
+        width: 13
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 336dd24c5b1081850800000000000000
+      internalID: 6347825554970760755
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Effect 02_00040_19
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 38
+        width: 37
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0b5095e1a27263ee0800000000000000
+      internalID: -1281793982089067088
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Effect 02_00040_0: 8122622818495260705
+      Effect 02_00040_1: 6054599434875856904
+      Effect 02_00040_10: -8105676144664867545
+      Effect 02_00040_11: -8276336497704984765
+      Effect 02_00040_12: 1384999109936518152
+      Effect 02_00040_13: -8698696059554777939
+      Effect 02_00040_14: 2273179700304210241
+      Effect 02_00040_15: -8133577466068301098
+      Effect 02_00040_16: 4274599417299104613
+      Effect 02_00040_17: -1522688074921490700
+      Effect 02_00040_18: 6347825554970760755
+      Effect 02_00040_19: -1281793982089067088
+      Effect 02_00040_2: 3476857862777689036
+      Effect 02_00040_3: 2986450312189768411
+      Effect 02_00040_4: 833500912369335874
+      Effect 02_00040_5: -5575354803231239799
+      Effect 02_00040_6: -1775012044192476493
+      Effect 02_00040_7: 5229257562635795310
+      Effect 02_00040_8: -8683824581584756283
+      Effect 02_00040_9: -5462325840917744934
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
