@@ -8,14 +8,22 @@ public class FinalEnemyShooting : MonoBehaviour
     public Transform player;
 
     [Header("Shooting Settings")]
-    [Tooltip("Shots per second")]
+    [Tooltip("Initial shots per second")]
     public float fireRate = 1f;
+
+    [Tooltip("How much fire rate increases per second")]
+    public float fireRateIncreasePerSecond = 0.1f;
+
+    [Tooltip("Maximum fire rate (shots per second)")]
+    public float maxFireRate = 5f;
 
     [Tooltip("Delay before shooting starts")]
     public float startDelay = 0.5f;
 
     private float nextFireTime;
     private bool canShoot = false;
+    private float currentFireRate;
+    private float shootingStartTime;
 
     private void Start()
     {
@@ -28,6 +36,7 @@ public class FinalEnemyShooting : MonoBehaviour
                 player = playerObj.transform;
         }
 
+        currentFireRate = fireRate;
         Invoke(nameof(EnableShooting), startDelay);
     }
 
@@ -36,16 +45,21 @@ public class FinalEnemyShooting : MonoBehaviour
         if (!canShoot || player == null)
             return;
 
+        // Increase fire rate over time
+        float elapsedTime = Time.time - shootingStartTime;
+        currentFireRate = Mathf.Min(fireRate + (fireRateIncreasePerSecond * elapsedTime), maxFireRate);
+
         if (Time.time >= nextFireTime)
         {
             ShootAtPlayer();
-            nextFireTime = Time.time + (1f / fireRate);
+            nextFireTime = Time.time + (1f / currentFireRate);
         }
     }
 
     void EnableShooting()
     {
         canShoot = true;
+        shootingStartTime = Time.time;
     }
 
     void ShootAtPlayer()

@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class FinalEnemyMove : MonoBehaviour
+public class LowFinalEnemyMove : MonoBehaviour
 {
     public float targetY;
     public float speed;
@@ -11,24 +11,26 @@ public class FinalEnemyMove : MonoBehaviour
     private bool reachedTarget = false;
     private bool movingBack = false;
     private float stayTimer = 0f;
+    private float startX;  // Store original X position
     private float exitY;
     private FinalEnemyHealth healthScript;
 
     private void Start()
     {
-        // Store the starting Y position to move back to
+        // Store the starting position
+        startX = transform.position.x;  // Keep original X position
         exitY = transform.position.y;
         healthScript = GetComponent<FinalEnemyHealth>();
     }
 
     private void Update()
     {
-        // Phase 1: Moving down to target
+        // Phase 1: Moving down to target (keep same X position)
         if (!reachedTarget)
         {
             transform.position = Vector3.MoveTowards(
                 transform.position,
-                new Vector3(0f, targetY, 0f),
+                new Vector3(startX, targetY, 0f),  // Use startX instead of 0f
                 speed * Time.deltaTime
             );
 
@@ -56,10 +58,10 @@ public class FinalEnemyMove : MonoBehaviour
             return;
         }
 
-        // Phase 3: Moving back up and off screen
+        // Phase 3: Moving back up and off screen (keep same X position)
         transform.position = Vector3.MoveTowards(
             transform.position,
-            new Vector3(0f, exitY, 0f),
+            new Vector3(startX, exitY, 0f),  // Use startX instead of 0f
             speed * Time.deltaTime
         );
 

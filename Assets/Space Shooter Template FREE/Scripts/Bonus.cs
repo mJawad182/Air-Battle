@@ -7,7 +7,10 @@ public class Bonus : MonoBehaviour {
     {
         if (collision.tag == "Player") 
         {
-            if (PlayerShooting.instance.weaponPower < PlayerShooting.instance.maxweaponPower)
+            // When Final Enemy is present AND missiles are active, limit weapon power to 2
+            int maxPower = PlayerShooting.instance.ShouldLimitWeaponPower() ? 2 : PlayerShooting.instance.maxweaponPower;
+            
+            if (PlayerShooting.instance.weaponPower < maxPower)
             {
                 PlayerShooting.instance.weaponPower++;
             }

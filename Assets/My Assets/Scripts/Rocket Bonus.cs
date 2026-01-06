@@ -12,8 +12,9 @@ public class RocketBonus : MonoBehaviour
             rockets = RocketController.instance.rockets;
             rockets.SetActive(true);
 
-            // Increase weapon power if not max
-            if (PlayerShooting.instance.weaponPower < PlayerShooting.instance.maxweaponPower)
+            // Increase weapon power if not max (respects limit if Final Enemy is present)
+            int maxPower = PlayerShooting.instance.ShouldLimitWeaponPower() ? 2 : PlayerShooting.instance.maxweaponPower;
+            if (PlayerShooting.instance.weaponPower < maxPower)
             {
                 PlayerShooting.instance.weaponPower++;
             }

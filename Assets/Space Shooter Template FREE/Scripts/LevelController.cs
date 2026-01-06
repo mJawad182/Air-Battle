@@ -31,7 +31,7 @@ public class LevelController : MonoBehaviour {
     [Header("Life Pickup")]
     public GameObject lifePowerUp;
     public float lifeSpawnTimeMin = 15f;
-    public float lifeSpawnTimeMax = 45f;
+    public float lifeSpawnTimeMax = 120f;
 
     Camera mainCamera;
 

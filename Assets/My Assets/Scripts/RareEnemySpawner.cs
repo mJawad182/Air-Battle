@@ -26,17 +26,17 @@ public class RareEnemySpawner : MonoBehaviour
     {
         levelTimer += Time.deltaTime;
 
-        if (levelTimer >= 40f && !spawnedAt40)
+        if (levelTimer >= 50f && !spawnedAt40)
         {
             SpawnRareEnemy();
             spawnedAt40 = true;
         }
 
-        if (levelTimer >= 80f && !spawnedAt80)
-        {
-            SpawnRareEnemy();
-            spawnedAt80 = true;
-        }
+        // if (levelTimer >= 80f && !spawnedAt80)
+        // {
+        //     SpawnRareEnemy();
+        //     spawnedAt80 = true;
+        // }
     }
 
     void SpawnRareEnemy()

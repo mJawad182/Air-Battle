@@ -32,6 +32,17 @@ public class Projectile : MonoBehaviour {
             if (destroyedByCollision)
                 Destruction();
         }
+        else if (!enemyBullet && collision.tag == "FinalEnemy")
+        { 
+            FinalEnemyHealth finalEnemy = collision.GetComponent<FinalEnemyHealth>();
+            if (finalEnemy != null)
+            {
+                finalEnemy.GetDamage(damage);
+                ScoreManager.Instance.AddScore(50);
+            }
+            if (destroyedByCollision)
+                Destruction();
+        }
     }
 
     void Destruction() 

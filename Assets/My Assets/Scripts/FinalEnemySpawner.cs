@@ -7,6 +7,7 @@ public class FinalEnemySpawner : MonoBehaviour
     public float spawnYOffScreen = 2f;
     public float stopYPosition = 2f;
     public float moveSpeed = 2f;
+    public float spawnTime = 85f;
 
     
     private bool spawnedAt90;
@@ -28,7 +29,7 @@ public class FinalEnemySpawner : MonoBehaviour
 
         
 
-        if (levelTimer >= 10f && !spawnedAt90)
+        if (levelTimer >= spawnTime && !spawnedAt90)
         {
             SpawnRareEnemy();
             spawnedAt90 = true;
