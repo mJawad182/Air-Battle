@@ -73,7 +73,7 @@ public class LowFinalEnemyMove : MonoBehaviour
             {
                 healthScript.RevertEverything();
             }
-            Destroy(gameObject);
+            GetComponent<Enemy>().Destruction();
         }
     }
 }

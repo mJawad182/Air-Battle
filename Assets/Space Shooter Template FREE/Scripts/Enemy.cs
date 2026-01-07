@@ -60,7 +60,7 @@ public class Enemy : MonoBehaviour {
     }
 
     //method of destroying the 'Enemy'
-    void Destruction()                           
+    public void Destruction()                           
     {
 
         AudioManager.instance.PlaySound(5);

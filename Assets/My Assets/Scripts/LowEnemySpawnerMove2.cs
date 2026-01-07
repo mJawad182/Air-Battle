@@ -73,7 +73,7 @@ public class LowEnemySpawnerMove2 : MonoBehaviour
             {
                 healthScript.RevertEverything();
             }
-            Destroy(gameObject);
+            GetComponent<Enemy>().Destruction();
         }
     }
 }

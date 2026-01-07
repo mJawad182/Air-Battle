@@ -74,4 +74,8 @@ public class AudioManager : MonoBehaviour
             PlaySound(clips[index]);
         }
     }
+
+    public void PlayClickSound(){
+        audioSource.PlayOneShot(clips[8]);
+    }
 }

@@ -27,6 +27,12 @@ public class MainMenuManager : MonoBehaviour
     }
     public void PlayGame() 
     {
+        AudioManager.instance.PlayClickSound();
+        StartCoroutine(PlayGameDelay());
+    }
+    IEnumerator PlayGameDelay()
+    {
+        yield return new WaitForSeconds(0.1f);
         SceneManager.LoadScene("LevelSelection");
     }
     public void LoadSettings()

@@ -71,7 +71,7 @@ public class FinalEnemyMove : MonoBehaviour
             {
                 healthScript.RevertEverything();
             }
-            Destroy(gameObject);
+            GetComponent<Enemy>().Destruction();
         }
     }
 }

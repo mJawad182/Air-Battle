@@ -93,7 +93,12 @@ public class GameUIManager : MonoBehaviour
 
     public void NextLevel()
     {
-        Time.timeScale = 1f;
+        AudioManager.instance.PlaySound(10);
+        StartCoroutine(NextLevelDelay());
+    }
+    IEnumerator NextLevelDelay()
+    {
+        yield return new WaitForSeconds(0.1f);
         LevelProgressManager.Instance.LoadNextLevel();
     }
 
@@ -214,12 +219,23 @@ public class GameUIManager : MonoBehaviour
 
     public void ReturnToHome()
     {
+        AudioManager.instance.PlaySound(10);
+        StartCoroutine(ReturnToHomeDelay());
+    }
+    IEnumerator ReturnToHomeDelay()
+    {
+        yield return new WaitForSeconds(0.1f);
         SceneManager.LoadScene("Main Menu");
         Time.timeScale = 1f;
     }
     public void Replay()
     {
-        
+        AudioManager.instance.PlaySound(10);
+        StartCoroutine(ReplayDelay());
+    }
+    IEnumerator ReplayDelay()
+    {
+        yield return new WaitForSeconds(0.1f);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         Time.timeScale = 1f;
     }
