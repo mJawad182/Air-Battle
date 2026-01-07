@@ -42,7 +42,10 @@ public class FinalEnemySpawner : MonoBehaviour
         GameObject enemy = Instantiate(rareEnemyPrefab, spawnPos, Quaternion.identity);
 
         FinalEnemyMove move = enemy.AddComponent<FinalEnemyMove>();
-        move.targetY = stopYPosition;
+        // Calculate target Y position - upper portion of screen (around 60-70% from bottom)
+        // Using stopYPosition as an offset from the top
+        float topY = mainCam.orthographicSize * 0.99f - stopYPosition;
+        move.targetY = topY;
         move.speed = moveSpeed;
     }
 

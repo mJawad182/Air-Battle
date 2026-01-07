@@ -18,6 +18,10 @@ public class PlayerMoving : MonoBehaviour {
 
     [Tooltip("offset from viewport borders for player's movement")]
     public Borders borders;
+    
+    [Tooltip("Offset above touch position to keep plane visible (in world units)")]
+    public float touchYOffset = 1.5f;
+    
     Camera mainCamera;
     bool controlIsActive = true; 
 
@@ -45,6 +49,7 @@ public class PlayerMoving : MonoBehaviour {
             {
                 Vector3 mousePosition = mainCamera.ScreenToWorldPoint(Input.mousePosition); //calculating mouse position in the worldspace
                 mousePosition.z = transform.position.z;
+                mousePosition.y += touchYOffset; // Offset above touch/mouse position
                 transform.position = Vector3.MoveTowards(transform.position, mousePosition, 30 * Time.deltaTime);
             }
 #endif
@@ -56,6 +61,7 @@ public class PlayerMoving : MonoBehaviour {
                 Touch touch = Input.touches[0];
                 Vector3 touchPosition = mainCamera.ScreenToWorldPoint(touch.position);  //calculating touch position in the world space
                 touchPosition.z = transform.position.z;
+                touchPosition.y += touchYOffset; // Offset above touch position to keep plane visible
                 transform.position = Vector3.MoveTowards(transform.position, touchPosition, 30 * Time.deltaTime);
             }
 #endif

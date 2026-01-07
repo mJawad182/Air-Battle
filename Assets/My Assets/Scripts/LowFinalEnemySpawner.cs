@@ -83,17 +83,20 @@ public class LowFinalEnemySpawner : MonoBehaviour
     {
         GameObject enemy = Instantiate(EnemyPrefab, spawnPos, Quaternion.identity);
 
+        // Calculate target Y position - lower on screen (multiply offset to place lower)
+        float topY = mainCam.orthographicSize - (stopYPosition * 2.5f);
+
         if (moveScript == MoveScriptType.LowFinalEnemyMove)
         {
             LowFinalEnemyMove move = enemy.AddComponent<LowFinalEnemyMove>();
-            move.targetY = stopYPosition;
+            move.targetY = topY;
             move.speed = moveSpeed;
             move.stayDuration = stayDuration;
         }
         else
         {
             LowEnemySpawnerMove2 move = enemy.AddComponent<LowEnemySpawnerMove2>();
-            move.targetY = stopYPosition;
+            move.targetY = topY;
             move.speed = moveSpeed;
             move.stayDuration = stayDuration;
         }

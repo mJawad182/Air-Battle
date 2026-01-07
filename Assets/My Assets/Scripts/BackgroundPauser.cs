@@ -57,7 +57,9 @@ public class BackgroundPauser : MonoBehaviour
     
     private bool IsLowFinalEnemyPresent()
     {
-        return FindFirstObjectByType<LowFinalEnemyMove>() != null;
+        // Check for either LowFinalEnemyMove or LowEnemySpawnerMove2
+        return FindFirstObjectByType<LowFinalEnemyMove>() != null || 
+               FindFirstObjectByType<LowEnemySpawnerMove2>() != null;
     }
     
     private void PauseBackground()

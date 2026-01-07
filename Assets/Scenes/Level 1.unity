@@ -3321,6 +3321,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1761238424061232, guid: 01cf4a33fc66cde4abc060ccfeadeb5a, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4984263745758592, guid: 01cf4a33fc66cde4abc060ccfeadeb5a, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -3384,7 +3388,7 @@ PrefabInstance:
     - target: {fileID: 114004447756405556, guid: 01cf4a33fc66cde4abc060ccfeadeb5a,
         type: 3}
       propertyPath: shotTimeMax
-      value: 4
+      value: 4.5
       objectReference: {fileID: 0}
     - target: {fileID: 114004447756405556, guid: 01cf4a33fc66cde4abc060ccfeadeb5a,
         type: 3}
@@ -3400,6 +3404,11 @@ PrefabInstance:
         type: 3}
       propertyPath: lifeSpawnTimeMax
       value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 114004447756405556, guid: 01cf4a33fc66cde4abc060ccfeadeb5a,
+        type: 3}
+      propertyPath: lifeSpawnTimeMin
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 114004447756405556, guid: 01cf4a33fc66cde4abc060ccfeadeb5a,
         type: 3}
@@ -3578,7 +3587,7 @@ PrefabInstance:
         type: 3}
       propertyPath: enemyWaves.Array.data[17].wave
       value: 
-      objectReference: {fileID: 1177001650480530, guid: e64040bc8d8b82c45a9297ac9699e081,
+      objectReference: {fileID: 1945754960637166, guid: 667129e9a76b0bf4095966e1592dfe5b,
         type: 3}
     - target: {fileID: 114004447756405556, guid: 01cf4a33fc66cde4abc060ccfeadeb5a,
         type: 3}
@@ -3588,12 +3597,12 @@ PrefabInstance:
     - target: {fileID: 114004447756405556, guid: 01cf4a33fc66cde4abc060ccfeadeb5a,
         type: 3}
       propertyPath: enemyWaves.Array.data[1].timeToStart
-      value: 7
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 114004447756405556, guid: 01cf4a33fc66cde4abc060ccfeadeb5a,
         type: 3}
       propertyPath: enemyWaves.Array.data[2].timeToStart
-      value: 9
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 114004447756405556, guid: 01cf4a33fc66cde4abc060ccfeadeb5a,
         type: 3}
@@ -3618,7 +3627,7 @@ PrefabInstance:
     - target: {fileID: 114004447756405556, guid: 01cf4a33fc66cde4abc060ccfeadeb5a,
         type: 3}
       propertyPath: enemyWaves.Array.data[7].timeToStart
-      value: 50
+      value: 52
       objectReference: {fileID: 0}
     - target: {fileID: 114004447756405556, guid: 01cf4a33fc66cde4abc060ccfeadeb5a,
         type: 3}
@@ -3668,7 +3677,7 @@ PrefabInstance:
     - target: {fileID: 114004447756405556, guid: 01cf4a33fc66cde4abc060ccfeadeb5a,
         type: 3}
       propertyPath: enemyWaves.Array.data[17].timeToStart
-      value: 147
+      value: 140
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4079,7 +4088,7 @@ MonoBehaviour:
   spawnYOffScreen: 2
   stopYPosition: 5
   moveSpeed: 3
-  spawnTime: 155
+  spawnTime: 148
 --- !u!1 &1119562139
 GameObject:
   m_ObjectHideFlags: 0
@@ -4542,7 +4551,7 @@ Transform:
   m_GameObject: {fileID: 1536112225}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.66, y: -2.68, z: 0}
+  m_LocalPosition: {x: 0.66, y: -1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5029,7 +5038,9 @@ MonoBehaviour:
   stopYPosition: 2
   moveSpeed: 2
   spawnTime: 80
+  stayDuration: 35
   enemiesToSpawn: 2
+  moveScript: 0
   horizontalOffset: 2
 --- !u!1 &1677599854
 GameObject:
@@ -5066,7 +5077,9 @@ MonoBehaviour:
   stopYPosition: 2
   moveSpeed: 2
   spawnTime: 40
+  stayDuration: 10
   enemiesToSpawn: 1
+  moveScript: 1
   horizontalOffset: 2
 --- !u!4 &1677599856
 Transform:
@@ -7128,6 +7141,7 @@ MonoBehaviour:
     maxX: 0
     minY: 0
     maxY: 0
+  touchYOffset: 1.5
 --- !u!114 &114960433441836966
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7300,7 +7314,7 @@ GameObject:
   - component: {fileID: 3574484275150416770}
   m_Layer: 0
   m_Name: Rockets
-  m_TagString: Rockets
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

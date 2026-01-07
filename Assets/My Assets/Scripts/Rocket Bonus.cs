@@ -12,17 +12,18 @@ public class RocketBonus : MonoBehaviour
             rockets = RocketController.instance.rockets;
             rockets.SetActive(true);
 
+            // Activate rockets in spawner (sets flag to keep spawning)
+            if (PlayerRocketSpawner.instance != null)
+            {
+                PlayerRocketSpawner.instance.ActivateRockets();
+                PlayerRocketSpawner.instance.IncreaseSpawnSpeed(0.2f); // decreases fire delay, i.e., increases rate
+            }
+
             // Increase weapon power if not max (respects limit if Final Enemy is present)
             int maxPower = PlayerShooting.instance.ShouldLimitWeaponPower() ? 2 : PlayerShooting.instance.maxweaponPower;
             if (PlayerShooting.instance.weaponPower < maxPower)
             {
                 PlayerShooting.instance.weaponPower++;
-            }
-
-            // Increase rocket fire rate
-            if (PlayerRocketSpawner.instance != null)
-            {
-                PlayerRocketSpawner.instance.IncreaseSpawnSpeed(0.2f); // decreases fire delay, i.e., increases rate
             }
 
             // Destroy the collectable
