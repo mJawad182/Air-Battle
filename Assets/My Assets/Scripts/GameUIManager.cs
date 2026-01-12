@@ -10,6 +10,8 @@ public class GameUIManager : MonoBehaviour
     public static GameUIManager Instance;
     [HideInInspector]
     public static bool isGamePaused = false; // Track pause
+    
+    private bool isLoadingScene = false; // Prevent multiple simultaneous scene loads
     [Header("UI Panels")]
     public GameObject pausePanel;
     public GameObject winPanel;
@@ -40,7 +42,11 @@ public class GameUIManager : MonoBehaviour
 
         HideAllPanels();
         isGamePaused = false;
+        isLoadingScene = false;
         InitializeLives();
+        
+        // Ensure time scale is normal at start
+        Time.timeScale = 1f;
     }
 
     // --- PAUSE PANEL ---
@@ -93,13 +99,27 @@ public class GameUIManager : MonoBehaviour
 
     public void NextLevel()
     {
+        if (isLoadingScene) return; // Prevent multiple calls
+        
         AudioManager.instance.PlaySound(10);
         StartCoroutine(NextLevelDelay());
     }
     IEnumerator NextLevelDelay()
     {
-        yield return new WaitForSeconds(0.1f);
+        isLoadingScene = true;
+        
+        // Reset time scale BEFORE loading to prevent glitches
+        Time.timeScale = 1f;
+        isGamePaused = false;
+        
+        // Use WaitForSecondsRealtime since game might be paused
+        yield return new WaitForSecondsRealtime(0.1f);
+        
+        // Load next level
         LevelProgressManager.Instance.LoadNextLevel();
+        
+        // Ensure time scale is normal after load
+        Time.timeScale = 1f;
     }
 
     public void HideWinPanel()
@@ -219,24 +239,50 @@ public class GameUIManager : MonoBehaviour
 
     public void ReturnToHome()
     {
+        if (isLoadingScene) return; // Prevent multiple calls
+        
         AudioManager.instance.PlaySound(10);
         StartCoroutine(ReturnToHomeDelay());
     }
     IEnumerator ReturnToHomeDelay()
     {
-        yield return new WaitForSeconds(0.1f);
+        isLoadingScene = true;
+        
+        // Reset time scale BEFORE loading to prevent glitches
+        Time.timeScale = 1f;
+        isGamePaused = false;
+        
+        // Use WaitForSecondsRealtime since game might be paused
+        yield return new WaitForSecondsRealtime(0.1f);
+        
+        // Load scene
         SceneManager.LoadScene("Main Menu");
+        
+        // Ensure time scale is normal after load
         Time.timeScale = 1f;
     }
     public void Replay()
     {
+        if (isLoadingScene) return; // Prevent multiple calls
+        
         AudioManager.instance.PlaySound(10);
         StartCoroutine(ReplayDelay());
     }
     IEnumerator ReplayDelay()
     {
-        yield return new WaitForSeconds(0.1f);
+        isLoadingScene = true;
+        
+        // Reset time scale BEFORE loading to prevent glitches
+        Time.timeScale = 1f;
+        isGamePaused = false;
+        
+        // Use WaitForSecondsRealtime since game might be paused
+        yield return new WaitForSecondsRealtime(0.1f);
+        
+        // Load scene
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        
+        // Ensure time scale is normal after load
         Time.timeScale = 1f;
     }
     public void StartLoseSequence(float delay)

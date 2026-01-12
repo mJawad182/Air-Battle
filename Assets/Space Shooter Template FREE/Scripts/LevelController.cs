@@ -32,6 +32,9 @@ public class LevelController : MonoBehaviour {
     public GameObject lifePowerUp;
     public float lifeSpawnTimeMin = 15f;
     public float lifeSpawnTimeMax = 120f;
+    private float lastCheckTime = 0f;
+    private float originalLifeSpawnTimeMin = 15f;
+    private bool hasSpawnedLifePowerUp = false; // Track if life power-up has been spawned in this level
 
     Camera mainCamera;
 
@@ -85,6 +88,9 @@ public class LevelController : MonoBehaviour {
     private void Start()
     {
         mainCamera = Camera.main;
+        // Save original lifeSpawnTimeMin value
+        originalLifeSpawnTimeMin = lifeSpawnTimeMin;
+        
         //for each element in 'enemyWaves' array creating coroutine which generates the wave
         for (int i = 0; i<enemyWaves.Length; i++) 
         {
@@ -164,23 +170,36 @@ public class LevelController : MonoBehaviour {
         }
     }
 
-    // Spawns life powerup only once per level at a random time
+    // Continuously checks and spawns life powerup when lives are less than 3
     IEnumerator SpawnLifePowerUpOnce()
     {
-        // Wait for random time between min and max
-        float randomTime = Random.Range(lifeSpawnTimeMin, lifeSpawnTimeMax);
-        yield return new WaitForSeconds(randomTime);
-
-        // Only spawn if player is still alive and lifePowerUp is assigned
-        if (Player.instance != null && lifePowerUp != null)
+        while (true)
         {
-            Instantiate(
-                lifePowerUp,
-                new Vector2(
-                    Random.Range(PlayerMoving.instance.borders.minX, PlayerMoving.instance.borders.maxX),
-                    mainCamera.ViewportToWorldPoint(Vector2.up).y + lifePowerUp.GetComponent<Renderer>().bounds.size.y / 2),
-                Quaternion.identity
-            );
+            // Wait for random time between min and max
+            float randomTime = Random.Range(originalLifeSpawnTimeMin, lifeSpawnTimeMax);
+            yield return new WaitForSeconds(randomTime);
+
+            // Store current time when checking (resets timer from this point)
+            lastCheckTime = Time.time;
+            lifeSpawnTimeMin = lastCheckTime;
+
+            // Only spawn if player is still alive, lifePowerUp is assigned, lives are less than 3, and hasn't spawned yet
+            if (Player.instance != null && lifePowerUp != null && !hasSpawnedLifePowerUp)
+            {
+                // Check if lives are less than 3 before spawning
+                if (GameUIManager.Instance != null && GameUIManager.Instance.GetCurrentLives() < 3)
+                {
+                    Instantiate(
+                        lifePowerUp,
+                        new Vector2(
+                            Random.Range(PlayerMoving.instance.borders.minX, PlayerMoving.instance.borders.maxX),
+                            mainCamera.ViewportToWorldPoint(Vector2.up).y + lifePowerUp.GetComponent<Renderer>().bounds.size.y / 2),
+                        Quaternion.identity
+                    );
+                    hasSpawnedLifePowerUp = true; // Mark as spawned so it only spawns once
+                }
+                // If lives are 3, don't spawn but continue the loop to check again after next timer
+            }
         }
     }
 }

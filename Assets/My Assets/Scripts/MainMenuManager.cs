@@ -2,6 +2,7 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using TMPro;
 
 public class MainMenuManager : MonoBehaviour
 {
@@ -9,6 +10,9 @@ public class MainMenuManager : MonoBehaviour
     public GameObject mainMenu;
     public GameObject Settings;
     public Slider loadingSlider;
+    
+    [Header("High Score")]
+    public TextMeshProUGUI highScoreText;
     private void Awake()
     {
        
@@ -17,7 +21,20 @@ public class MainMenuManager : MonoBehaviour
     void Start()
     {
         Time.timeScale = 1f; // CRITICAL
+        UpdateHighScore();
         StartCoroutine(Loading());
+    }
+    
+    /// <summary>
+    /// Updates the high score text from PlayerPrefs
+    /// </summary>
+    void UpdateHighScore()
+    {
+        if (highScoreText != null)
+        {
+            int highScore = PlayerPrefs.GetInt("HighScore", 0);
+            highScoreText.text = highScore.ToString();
+        }
     }
 
     // Update is called once per frame
@@ -44,6 +61,20 @@ public class MainMenuManager : MonoBehaviour
     {
         Settings.SetActive(false);
         mainMenu.SetActive(true);
+    }
+
+    /// <summary>
+    /// Quits the application
+    /// </summary>
+    public void ExitGame()
+    {
+        AudioManager.instance.PlayClickSound();
+        
+        #if UNITY_EDITOR
+            UnityEditor.EditorApplication.isPlaying = false;
+        #else
+            Application.Quit();
+        #endif
     }
 
     IEnumerator Loading()
